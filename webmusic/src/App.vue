@@ -1,18 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <Footer />
+  <LibraryContent msg="Welcome to Your Vue.js App"/>
+  <FooterBlock />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Footer from './components/Footer.vue'
+import LibraryContent from './components/LibraryContent.vue';
+import FooterBlock from './components/FooterBlock.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    Footer
+    LibraryContent,
+    FooterBlock
+  },
+  data:() => ({
+    currentSongId: ""
+  }),
+
+  mounted() {
+    /*EventBus.$on("TESTEVENT", (payload) => {
+      console.log("Test!!!!!!!!!!!! mit payload: " + payload);
+    });*/
+    this.emitter.on("testevent", payload => {
+      console.log("test1234:" + payload);
+    })
+  },
+
+  methods: {
   }
 }
 </script>

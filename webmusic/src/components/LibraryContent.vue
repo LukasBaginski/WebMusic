@@ -1,16 +1,21 @@
 <template>
-  <div class="footer">
-      <p>
-          Hentai S3RL
-      </p>
+  <div class="library">
+    <h1 v-on:click="clicktest">click me!</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Footer',
+  name: 'LibraryContent',
   props: {
     msg: String
+  },
+  methods: {
+    clicktest() {
+      //EventBus.$emit("TESTEVENT", "payload test");
+      console.log("clicktest clicked lolol");
+      this.emitter.emit("testevent", "testlol");
+    }
   }
 }
 </script>
