@@ -1,16 +1,27 @@
 <template>
   <div class="footerblock">
-      <v-footer padless class="minus-left footer arrow-up">
-        <v-col class="text-center" cols="12">
-          <v-img src="/song-image/{{currentSongId}}.png"></v-img>
-        </v-col>
-      </v-footer>
+    <v-footer padless class="minus-left footer arrow-up">
+      <v-img
+        max-height="150"
+        max-width="250"
+        :src="songImage"
+      ></v-img>
+      <v-col class="text-center" cols="12">
+        test
+      </v-col>
+    </v-footer>
   </div>
 </template>
 
 <script>
+// v-img src: /song-image/{{currentSongId}}.png
 export default {
-  name: 'FooterBlock'
+  name: 'FooterBlock',
+  data() {
+    return {
+      songImage: require("../assets/test.jpg") // still not showing up: https://stackoverflow.com/questions/53112247/vuetify-issue-why-doesnt-the-v-img-component-display-anything-despite-the-ima
+    }
+  }
 }
 </script>
 

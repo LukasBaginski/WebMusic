@@ -12,7 +12,6 @@ export default {
   },
   methods: {
     clicktest() {
-      //EventBus.$emit("TESTEVENT", "payload test");
       console.log("clicktest clicked lolol");
       this.emitter.emit("testevent", "testlol");
     }

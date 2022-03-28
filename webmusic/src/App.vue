@@ -18,9 +18,6 @@ export default {
   }),
 
   mounted() {
-    /*EventBus.$on("TESTEVENT", (payload) => {
-      console.log("Test!!!!!!!!!!!! mit payload: " + payload);
-    });*/
     this.emitter.on("testevent", payload => {
       console.log("test1234:" + payload);
     })
